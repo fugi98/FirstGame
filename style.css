@@ -1,15 +1,115 @@
-body{
+body {
 	background: #202020;
+	margin: 0;
+	font-family: Arial, sans-serif;
 }
 
-canvas{
+canvas {
 	display: block;
+	border: none;
+	/* Removed border to fix the rectangle issue */
 }
 
-#canvasBg{
-	background: #ffffff;
+#gameArea {
+	position: relative;
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
 }
 
-#overlapping canvas{
-	margin: -600px 0 0;
+.notification {
+	font-size: 20px;
+	color: #fff;
+	background: #333;
+	padding: 10px;
+	border-radius: 5px;
+	position: fixed;
+  width: 10rem;
+	bottom: 2rem;
+	right: 1rem;
+  margin-right: auto;
+	margin-left: auto;
+	display: none;
+}
+
+
+#complete-level {
+	display: none;
+}
+
+#canvasBg,
+#canvasEntities {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#canvasBg {
+	background: linear-gradient(135deg, #55c9be, #4d053d);
+}
+
+#controls {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+#startButton,
+#restartButton,
+#gameOver {
+	display: block;
+	margin: 10px auto;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#startScreen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 30rem;
+	height: 10rem;
+	background: rgba(0, 0, 0, 0.364);
+	/* Optional for overlay effect */
+	z-index: 10;
+	/* Ensure it is above the game */
+	border-radius: 1rem;
+}
+
+#startScreen button {
+	border-radius: 2rem;
+	padding: 0.6rem;
+	background: black;
+	color: white;
+}
+
+#startScreen.hidden {
+	display: none;
+}
+
+#restartButton {
+	background-color: #dc3545;
+	color: white;
+	display: none;
+	/* Hidden by default */
+}
+
+#gameOver {
+	background-color: #ffc107;
+	color: #000;
+	display: none;
+	/* Hidden by default */
+}
+
+#instructions {
+	color: rgb(0, 0, 0);
+	font-size: 14px;
+	margin-bottom: 10px;
 }

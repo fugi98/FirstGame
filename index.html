@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Game</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="images/favicon.ico" type="images/favicon">
+	<!-- If your favicon is in a different directory, adjust the path accordingly -->
+	<!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
 </head>
-<body>
-	<canvas id="canvasBg" width="800" height="600"></canvas>
-	<div id="overlapping">
-	  <canvas id="canvasEntities" width="800" height="600"></canvas>	
-	</div>
 
+<body>
+	<div id="gameArea">
+		<canvas id="canvasBg" width="800" height="600"></canvas>
+		<canvas id="canvasEntities" width="800" height="600"></canvas>
+		<div id="controls">
+			<div id="startScreen">
+				<button id="startGameButton">Start Game</button>
+				<p id="instructions">Use arrow keys to move. Press spacebar to shoot.</p>
+			</div>
+			<div id="completeLevel" style="display:none;">Level Completed!</div>
+			<button id="complete-level">Complete Level</button>
+			<button id="restartButton">Restart</button>
+			<div id="level-info" class="notification"></div>
+			<div id="gameOver">Game Over</div>
+		</div>
+	</div>
 	<script src="game.js"></script>
 </body>
+
 </html>
